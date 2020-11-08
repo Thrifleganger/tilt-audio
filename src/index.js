@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import WidgetHome from "./components/widgets/WidgetHome";
+import {createMuiTheme, ThemeProvider} from "@material-ui/core/styles";
+
+const themeDark = createMuiTheme({
+  palette: {
+    type: 'dark'
+  },
+  typography: {
+    fontFamily: '"Tw Cen Mt", "Helvetica", "Arial", "sans-serif"',
+    fontSize: 16
+  }
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={themeDark}>
+      <WidgetHome/>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
