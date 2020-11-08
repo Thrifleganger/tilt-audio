@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/tilt-audio/static/css/main.86b1fcf7.chunk.css",
+    "main.js": "/tilt-audio/static/js/main.a6ebc9ca.chunk.js",
+    "main.js.map": "/tilt-audio/static/js/main.a6ebc9ca.chunk.js.map",
+    "runtime-main.js": "/tilt-audio/static/js/runtime-main.73e1b431.js",
+    "runtime-main.js.map": "/tilt-audio/static/js/runtime-main.73e1b431.js.map",
+    "static/css/2.d98526b1.chunk.css": "/tilt-audio/static/css/2.d98526b1.chunk.css",
+    "static/js/2.6cfe6221.chunk.js": "/tilt-audio/static/js/2.6cfe6221.chunk.js",
+    "static/js/2.6cfe6221.chunk.js.map": "/tilt-audio/static/js/2.6cfe6221.chunk.js.map",
+    "static/js/3.8b15c257.chunk.js": "/tilt-audio/static/js/3.8b15c257.chunk.js",
+    "static/js/3.8b15c257.chunk.js.map": "/tilt-audio/static/js/3.8b15c257.chunk.js.map",
+    "index.html": "/tilt-audio/index.html",
+    "static/css/2.d98526b1.chunk.css.map": "/tilt-audio/static/css/2.d98526b1.chunk.css.map",
+    "static/css/main.86b1fcf7.chunk.css.map": "/tilt-audio/static/css/main.86b1fcf7.chunk.css.map",
+    "static/js/2.6cfe6221.chunk.js.LICENSE.txt": "/tilt-audio/static/js/2.6cfe6221.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.73e1b431.js",
+    "static/css/2.d98526b1.chunk.css",
+    "static/js/2.6cfe6221.chunk.js",
+    "static/css/main.86b1fcf7.chunk.css",
+    "static/js/main.a6ebc9ca.chunk.js"
+  ]
+}
