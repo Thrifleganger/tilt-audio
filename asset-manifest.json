@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tilt-audio/static/css/main.71de2751.chunk.css",
-    "main.js": "/tilt-audio/static/js/main.08475cc0.chunk.js",
-    "main.js.map": "/tilt-audio/static/js/main.08475cc0.chunk.js.map",
+    "main.js": "/tilt-audio/static/js/main.d0de6b9b.chunk.js",
+    "main.js.map": "/tilt-audio/static/js/main.d0de6b9b.chunk.js.map",
     "runtime-main.js": "/tilt-audio/static/js/runtime-main.dc9bee8d.js",
     "runtime-main.js.map": "/tilt-audio/static/js/runtime-main.dc9bee8d.js.map",
     "static/css/2.d98526b1.chunk.css": "/tilt-audio/static/css/2.d98526b1.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.d98526b1.chunk.css",
     "static/js/2.fe90444b.chunk.js",
     "static/css/main.71de2751.chunk.css",
-    "static/js/main.08475cc0.chunk.js"
+    "static/js/main.d0de6b9b.chunk.js"
   ]
 }
