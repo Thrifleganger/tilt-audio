@@ -55,7 +55,7 @@ class SineWave {
   }
 
   setPhase(value) {
-    this.additionalPhase = value * 2 * Math.PI;
+    this.additionalPhase = value * Math.PI;
   }
 
   setHeightOffset(value) {

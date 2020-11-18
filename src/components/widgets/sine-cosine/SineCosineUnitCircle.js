@@ -1,4 +1,4 @@
-class UnitCircle {
+class SineCosineUnitCircle {
   constructor(
     p,
     position = {x:0,y:0},
@@ -44,6 +44,10 @@ class UnitCircle {
   setSpeed = (value) => {
     this.animatedRadius.setSpeed(value);
   }
+
+  setPhase = (value) => {
+    this.animatedRadius.additionalPhase = value * Math.PI;
+  }
 }
 
 class AnimatedRadius {
@@ -54,6 +58,7 @@ class AnimatedRadius {
     this.frequency = frequency;
     this.speed = 1.0;
     this.phase = 0.0;
+    this.additionalPhase = 0.0;
     this.offset = 2 * Math.PI * frequency / Math.floor(p.width);
   }
 
@@ -61,22 +66,22 @@ class AnimatedRadius {
     const {p, length, phase, offset, speed} = this;
     const {x,y} = this.origin;
 
-    const circleX = x + (Math.cos(phase) * length);
-    const circleY = y + (Math.sin(phase) * length);
+    const circleX = x + (Math.cos(phase - this.additionalPhase) * length);
+    const circleY = y + (Math.sin(phase - this.additionalPhase) * length);
 
     p.line(x, y, circleX, circleY);
 
-    p.strokeWeight(3);
+    p.strokeWeight(2);
     p.stroke(p.color(226, 166, 255));
     p.line(x, y, circleX, y);
     p.drawingContext.setLineDash([5, 10]);
-    p.line(circleX, y, circleX, p.width/5 + length);
+    p.line(circleX, y, circleX, 3*p.width/10);
 
     p.drawingContext.setLineDash([]);
     p.stroke(p.color(197, 255, 116));
     p.line(circleX, circleY, circleX, y);
     p.drawingContext.setLineDash([5, 10]);
-    p.line(circleX, circleY, p.width/5 + length, circleY);
+    p.line(circleX, circleY, 3*p.width/10, circleY);
     p.drawingContext.setLineDash([]);
 
     this.phase -= offset * speed;
@@ -96,4 +101,4 @@ class AnimatedRadius {
   }
 }
 
-export default UnitCircle;
+export default SineCosineUnitCircle;

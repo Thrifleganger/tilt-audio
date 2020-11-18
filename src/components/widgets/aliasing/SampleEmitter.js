@@ -24,9 +24,9 @@ class SampleEmitter {
         this.emitterDestructorCallback,
         this.frequency, this.speed
       ))
-      setTimeout(sampleGenerationCallback, this.samplingInterval);
+      setTimeout(sampleGenerationCallback, this.samplingInterval   / this.speed);
     };
-    setTimeout(sampleGenerationCallback, this.samplingInterval);
+    setTimeout(sampleGenerationCallback, this.samplingInterval  / this.speed);
   }
 
   display() {
@@ -85,7 +85,7 @@ class Sample {
     this.destructorCallback = destructorCallback;
     this.frequency = frequency;
     this.speed = speed;
-    this.size = 20;
+    this.size = 14;
   }
 
   display() {

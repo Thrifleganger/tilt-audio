@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import  { Redirect } from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 import {WidgetContext} from "./WidgetHome";
 
 const WidgetDefaultRedirect = (props) => {

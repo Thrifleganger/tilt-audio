@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import WidgetHome from "./components/widgets/WidgetHome";
 import {createMuiTheme, ThemeProvider} from "@material-ui/core/styles";
+import {HashRouter} from "react-router-dom";
+import "./index.css"
 
 const themeDark = createMuiTheme({
   palette: {
     type: 'dark'
   },
   typography: {
-    fontFamily: '"Tw Cen Mt", "Helvetica", "Arial", "sans-serif"',
+    fontFamily: '"TwCenMTStd", "Helvetica", "Arial", "sans-serif"',
     fontSize: 16
   }
 });
@@ -17,7 +19,9 @@ const themeDark = createMuiTheme({
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={themeDark}>
-      <WidgetHome/>
+      <HashRouter>
+        <WidgetHome/>
+      </HashRouter>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
