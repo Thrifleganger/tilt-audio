@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tilt-audio/static/css/main.71de2751.chunk.css",
-    "main.js": "/tilt-audio/static/js/main.ea4a4540.chunk.js",
-    "main.js.map": "/tilt-audio/static/js/main.ea4a4540.chunk.js.map",
+    "main.js": "/tilt-audio/static/js/main.cf243e0b.chunk.js",
+    "main.js.map": "/tilt-audio/static/js/main.cf243e0b.chunk.js.map",
     "runtime-main.js": "/tilt-audio/static/js/runtime-main.a8c07826.js",
     "runtime-main.js.map": "/tilt-audio/static/js/runtime-main.a8c07826.js.map",
     "static/css/2.d98526b1.chunk.css": "/tilt-audio/static/css/2.d98526b1.chunk.css",
@@ -18,6 +18,7 @@
     "static/media/index.css": "/tilt-audio/static/media/TwCenMTStd.d71649bd.otf",
     "static/media/aliasing.c2e0555d.gif": "/tilt-audio/static/media/aliasing.c2e0555d.gif",
     "static/media/intereference.bacd5780.gif": "/tilt-audio/static/media/intereference.bacd5780.gif",
+    "static/media/julia-set.7b9c338b.gif": "/tilt-audio/static/media/julia-set.7b9c338b.gif",
     "static/media/mandelbrot-set.e19f7a51.gif": "/tilt-audio/static/media/mandelbrot-set.e19f7a51.gif",
     "static/media/phasor-introduction.feae4ef3.gif": "/tilt-audio/static/media/phasor-introduction.feae4ef3.gif",
     "static/media/phasor-variable-frequency.61a25319.gif": "/tilt-audio/static/media/phasor-variable-frequency.61a25319.gif",
@@ -29,6 +30,6 @@
     "static/css/2.d98526b1.chunk.css",
     "static/js/2.dc928441.chunk.js",
     "static/css/main.71de2751.chunk.css",
-    "static/js/main.ea4a4540.chunk.js"
+    "static/js/main.cf243e0b.chunk.js"
   ]
 }
