@@ -26,6 +26,10 @@ const useStyles = makeStyles((theme) => ({
     color: "inherit",
     textDecoration: "none"
   },
+  titleLink: {
+    color: "inherit",
+    textDecoration: "none"
+  },
   light: {
     fontFamily: "TwCenMTStd-Light"
   },
@@ -48,7 +52,9 @@ export default function Header(props) {
       <BrowserView>
         <Toolbar className={classes.toolbar}>
           <Typography component="h2" variant="h3" color="inherit" noWrap className={classes.toolbarTitle}>
-            <b className={classes.bold}>tilt</b><span className={classes.light}>audio</span>
+            <Link className={classes.titleLink} to={"/"}>
+              <b className={classes.bold}>tilt</b><span className={classes.light}>audio</span>
+            </Link>
           </Typography>
           {sections.map((section) => (
             <Link key={section.title} to={section.route} className={classes.toolbarLink}>
@@ -60,10 +66,12 @@ export default function Header(props) {
       <MobileView>
         <Toolbar className={`${classes.toolbar} ${classes.toolbarMobile}`}>
           <Typography component="h2" variant="h3" color="inherit" noWrap className={classes.toolbarTitle}>
-            <b className={classes.bold}>tilt</b><span className={classes.light}>audio</span>
+            <Link className={classes.titleLink} to={"/"}>
+              <b className={classes.bold}>tilt</b><span className={classes.light}>audio</span>
+            </Link>
           </Typography>
-          <IconButton color="inherit"  edge="end" onClick={() => toggleDrawer(true)}>
-            <MenuIcon />
+          <IconButton color="inherit" edge="end" onClick={() => toggleDrawer(true)}>
+            <MenuIcon/>
           </IconButton>
         </Toolbar>
 

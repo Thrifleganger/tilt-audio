@@ -4,17 +4,30 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Header from '../Header';
-import AliasingWidget from './aliasing/AliasingWidget';
 import Sidebar from '../Sidebar';
 import Footer from '../Footer';
-import SineWaveWidget from "./sinusoid-properties/SineWaveWidget";
 import {Route} from "react-router-dom";
+
+import AliasingWidget from './aliasing/AliasingWidget';
+import SineWaveWidget from "./sinusoid-properties/SineWaveWidget";
 import SineCosineWidget from "./sine-cosine/SineCosineWidget";
-import WidgetDefaultRedirect from "./WidgetDefaultRedirect";
 import SinusoidalMotion2DWidget from "./sinusoidal-motion-2d/SinusoidalMotion2DWidget";
 import SinusoidInterferenceWidget from "./interference/SinusoidInterferenceWidget";
 import PhasorIntroductionWidget from "./phasor-introduction/PhasorIntroductionWidget";
-import PhasorVariableFrequency from "./phasor-variable-frequency/PhasorVariableFrequency";
+import PhasorVariableFrequencyWidget from "./phasor-variable-frequency/PhasorVariableFrequency";
+import MandelbrotSetWidget from "./mandelbrot-set/MandelbrotSetWidget";
+import JuliaSetWidget from "./julia-set/JuliaSetWidget"
+import WidgetsArsenal from "./WidgetsArsenal";
+
+import phasorVariableFrequencyImage from "../../media/widgets/gif/phasor-variable-frequency.gif";
+import phasorIntroductionImage from "../../media/widgets/gif/phasor-introduction.gif";
+import sinusoidal2DMotionImage from "../../media/widgets/gif/2d-motion.gif";
+import alaisingImage from "../../media/widgets/gif/aliasing.gif";
+import sineCosineImage from "../../media/widgets/gif/sine-cosine.gif";
+import sinusoidPropertiesImage from "../../media/widgets/gif/sinusoid-properties.gif";
+import interferenceImage from "../../media/widgets/gif/intereference.gif";
+import mandelbrotSetImage from "../../media/widgets/gif/mandelbrot-set.gif";
+import juliaSetImage from "../../media/widgets/gif/julia-set.gif";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -31,19 +44,12 @@ const sections = [
 
 const widgets = [
   {
-    id: "aliasing",
-    sidebarTitle: "Aliasing",
-    title: "Aliasing",
-    category: "Digital Audio Fundamentals",
-    route: "/widgets/aliasing",
-    shortDescription: "An aliased signal is an imposter. An unexpected and unwanted intruder in your digital signal. Changing the <b>frequency</b> or <b>sampling interval</b> changes how many samples are captured. If there are less than 3 samples per cycle of the sine wave, you've lost the ability to recreate the sine wave for that frequency. Instead what you get is a signal interpreted with a different frequency.",
-    component: AliasingWidget
-  }, {
     id: "sinusoid-properties",
     sidebarTitle: "Sinusoid properties",
     title: "Properties of sinusoids",
     category: "Origins of the sine wave",
     route: "/widgets/sinusoid-properties",
+    image: sinusoidPropertiesImage,
     shortDescription: "Dance with your sine wave. Remember the rules, <b>amplitude</b> to swing your arms wide or keep them close to your body, <b>phase</b> to sway from side to side, <b>offset</b> to duck or to jump, and <b>frequency</b>. Well frequency is your party piece. Show them what you got. ",
     component: SineWaveWidget
   }, {
@@ -52,6 +58,7 @@ const widgets = [
     title: "Sine Cosine Visualized",
     category: "Origins of the sine wave",
     route: "/widgets/sine-cosine",
+    image: sineCosineImage,
     shortDescription: "Whip out your magic pens. Attach them to the circumference of a unit circle. Put a sheet of paper underneath your circle and start rotating the circle. Now, start pulling the paper away from the circle. What you get is a sine wave (green). Now start pulling the paper perpendicularly, and you get another sine wave ofcourse, only this time, offset by a little. The offset is exactly 2π radian, and hence a cosine wave (pink). <b>Freqeuncy</b> to turn the circle faster, and <b>amplitude</b> to change the size of the circle. ",
     component: SineCosineWidget
   }, {
@@ -60,6 +67,7 @@ const widgets = [
     title: "2 Dimensional Sinusoidal Motion",
     category: "Origins of the sine wave",
     route: "/widgets/sinusoidal-motion-2d",
+    image: sinusoidal2DMotionImage,
     shortDescription: "Whip out your magic pens. Attach them to the circumference of a unit circle. Put a sheet of paper underneath your circle and start rotating the circle. Now, start pulling the paper away from the circle. What you get is a sine wave (green). Now start pulling the paper perpendicularly, and you get another sine wave ofcourse, only this time, offset by a little. The offset is exactly 2π radian, and hence a cosine wave (pink). <b>Freqeuncy</b> to turn the circle faster, and <b>amplitude</b> to change the size of the circle. ",
     component: SinusoidalMotion2DWidget
   }, {
@@ -68,6 +76,7 @@ const widgets = [
     title: "Constructive and Destructive Interference",
     category: "Origins of the sine wave",
     route: "/widgets/sinusoidal-interference",
+    image: interferenceImage,
     shortDescription: "Whip out your magic pens. Attach them to the circumference of a unit circle. Put a sheet of paper underneath your circle and start rotating the circle. Now, start pulling the paper away from the circle. What you get is a sine wave (green). Now start pulling the paper perpendicularly, and you get another sine wave ofcourse, only this time, offset by a little. The offset is exactly 2π radian, and hence a cosine wave (pink). <b>Freqeuncy</b> to turn the circle faster, and <b>amplitude</b> to change the size of the circle. ",
     component: SinusoidInterferenceWidget
   }, {
@@ -76,6 +85,7 @@ const widgets = [
     title: "Phasors: An Introduction",
     category: "Origins of the sine wave",
     route: "/widgets/phasor-introduction",
+    image: phasorIntroductionImage,
     shortDescription: "Phase + Vector = Phasor<br/><br/>\n" +
       "It's much more though. A phasor can encapsulate a bunch of information. Consider a unit circle with it's arm as the radius. The arm has a certain length (<b>amplitude</b>), a certain angle that it makes with the x-axis (<b>initial phase</b>), and when rotating, a certain <b>angular frequency</b> that it possesses. The rotating arm <b>is</b> a phasor.<br/><br/>\n" +
       "A phasor looks awfully familiar to a sinusoid. Well it is. It's just a complex number representation of a sinusoid. Graphically, this gives us an incredible tool to visualize the interactions between 2 or more sinusoids. One of the common operations we can do is phasor addition.<br/><br/>\n" +
@@ -87,11 +97,41 @@ const widgets = [
     title: "Phasors: Variable Frequency",
     category: "Origins of the sine wave",
     route: "/widgets/phasor-variable-frequency",
+    image: phasorVariableFrequencyImage,
     shortDescription: "Phase + Vector = Phasor<br/><br/>\n" +
       "It's so much easier to visualize adding phasors when compared to adding sinusoidal functions. Especially when the sinusoids have different frequencies. In <a style='color: white' href=\"#/widgets/phasor-introduction\">Phasors: An Introduction</a>, we varied the phase while keeping the frequency constant. Here we'll vary the frequency instead.<br/><br/>\n" +
       "Adding sinusoids of different frequencies dramatically alters the resulting sinusoid, often in unintuitive ways. But by visualizing phasor addition, the process is demystified and laid bare. You can see exactly why the resulting sinusoid is formed as it is by reducing the Animation Speed.<br/><br/>\n" +
       "Moreover, the visualizations result in unique and distinct patterns when tracing the added phasor, patterns that seem to evolve and grow over time, but are entirely reproducible, and follow a static pattern for whole number ratios, and a more erratic and evolving pattern when not. The base wave (blue) is 6Hz in frequency. ",
-    component: PhasorVariableFrequency
+    component: PhasorVariableFrequencyWidget
+  }, {
+    id: "aliasing",
+    sidebarTitle: "Aliasing",
+    title: "Aliasing",
+    category: "Digital Audio Fundamentals",
+    route: "/widgets/aliasing",
+    image: alaisingImage,
+    shortDescription: "An aliased signal is an imposter. An unexpected and unwanted intruder in your digital signal. Changing the <b>frequency</b> or <b>sampling interval</b> changes how many samples are captured. If there are less than 3 samples per cycle of the sine wave, you've lost the ability to recreate the sine wave for that frequency. Instead what you get is a signal interpreted with a different frequency.",
+    component: AliasingWidget
+  }, {
+    id: "mandelbrot-set",
+    sidebarTitle: "Mandelbrot Set",
+    title: "Mandelbrot Set",
+    category: "Miscalleneous Mathematics",
+    route: "/widgets/mandelbrot-set",
+    image: mandelbrotSetImage,
+    shortDescription: "This is the infamously infinite Mandelbrot set. You've probably already seen visualizations of the Mandelbrot set as a video dragging you down into a never ending spiral of self similar shapes, or through someone trying to explain what infinity means and the inherent beauty of mathematics or your stoner friend suggesting that we live in a fractal hologram. Whatever the case may be, the generation of the Mandelbrot set, and the mathematics behind it is fairly simple. <br/><br/>\n" +
+      "All real numbers can be expressed on a one dimensional number line. We know this. We also have a set of hypothetical numbers, called the imaginary numbers that can also be expressed on a one dimensional imaginary number line. Combine the 2 together orthogonally, and we get a 2 dimensional complex plane, made of a combination of real and imaginary numbers where <i>Z = a + bi</i>, where a is real and bi is imaginary. For our illustration, we can consider the canvas we are drawing on as a complex plane. For every point on the canvas, we calculate a function <i>f(z) = z<sup>2</sup> + c</i>, where is <i>c</i> is the point in consideration, and we recursively iterate over the function where <i>z</i> starts from 0, and the result is fed back into the function over and over again. If the function over many iterations results in a number which leaves the canvas, we consider this as unstable and ignore it. But if, for a certain value of <i>c</i>, the function manages to produce a number which stays within the bounds of the canvas even when iterated endlessly, we consider this as a complex number which is part of the Mandelbrot set (coloured in black). In this canvas, there are infinitely many numbers which are unstable, and infinitely many numbers which are stable and part of the Mandelbrot set. But the really interesting bit is the boundary between these 2 sets of numbers. The boundary forms a fractal patterns that evolves and grows and falls back on to itself when zoom in and recalculate with finer accuracy.",
+    component: MandelbrotSetWidget
+  }, {
+    id: "julia-set",
+    sidebarTitle: "Julia Set",
+    title: "Julia Set",
+    category: "Miscalleneous Mathematics",
+    route: "/widgets/julia-set",
+    image: juliaSetImage,
+    shortDescription: "This is the infamously infinite Mandelbrot set. You've probably already seen visualizations of the Mandelbrot set as a video dragging you down into a never ending spiral of self similar shapes, or through someone trying to explain what infinity means and the inherent beauty of mathematics or your stoner friend suggesting that we live in a fractal hologram. Whatever the case may be, the generation of the Mandelbrot set, and the mathematics behind it is fairly simple. <br/><br/>\n" +
+      "All real numbers can be expressed on a one dimensional number line. We know this. We also have a set of hypothetical numbers, called the imaginary numbers that can also be expressed on a one dimensional imaginary number line. Combine the 2 together orthogonally, and we get a 2 dimensional complex plane, made of a combination of real and imaginary numbers where <i>Z = a + bi</i>, where a is real and bi is imaginary. For our illustration, we can consider the canvas we are drawing on as a complex plane. For every point on the canvas, we calculate a function <i>f(z) = z<sup>2</sup> + c</i>, where is <i>c</i> is the point in consideration, and we recursively iterate over the function where <i>z</i> starts from 0, and the result is fed back into the function over and over again. If the function over many iterations results in a number which leaves the canvas, we consider this as unstable and ignore it. But if, for a certain value of <i>c</i>, the function manages to produce a number which stays within the bounds of the canvas even when iterated endlessly, we consider this as a complex number which is part of the Mandelbrot set (coloured in black). In this canvas, there are infinitely many numbers which are unstable, and infinitely many numbers which are stable and part of the Mandelbrot set. But the really interesting bit is the boundary between these 2 sets of numbers. The boundary forms a fractal patterns that evolves and grows and falls back on to itself when zoom in and recalculate with finer accuracy.",
+    component: JuliaSetWidget
   }
 ]
 
@@ -104,18 +144,16 @@ export default function WidgetHome() {
       <CssBaseline/>
       <Container maxWidth="lg">
         <Header sections={sections}/>
-        <main>
           <WidgetContext.Provider value={widgets}>
             <Grid container spacing={5} className={classes.mainGrid}>
               {widgets.map(widget => (
                 <Route key={widget.id} path={widget.route} component={widget.component}/>
               ))}
               <Route path={"/widgets/:id"} component={Sidebar}/>
-              <Route path={"/widgets"} exact={true} component={WidgetDefaultRedirect}/>
-              <Route path={"/"} exact={true} component={WidgetDefaultRedirect}/>
+              <Route path={"/widgets"} exact={true} component={WidgetsArsenal}/>
+              <Route path={"/"} exact={true} component={WidgetsArsenal}/>
             </Grid>
           </WidgetContext.Provider>
-        </main>
       </Container>
       <Footer/>
     </>

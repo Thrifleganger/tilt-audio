@@ -11,6 +11,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "markdown-to-jsx": "^7.0.1",
+    "mathjs": "^8.0.1",
     "p5": "^1.1.9",
     "precision-inputs": "^0.2.5",
     "prop-types": "^15.7.2",
