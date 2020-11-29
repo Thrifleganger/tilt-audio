@@ -7,11 +7,8 @@ import Grid from "@material-ui/core/Grid";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Button from "@material-ui/core/Button";
 import {Typography} from "@material-ui/core";
-import {BrowserView} from 'react-device-detect';
 import {makeStyles} from "@material-ui/core/styles";
-import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
-import Paper from "@material-ui/core/Paper";
 import Menu from "@material-ui/core/Menu";
 
 const MandelbrotSetWidget = ({match}) => {
@@ -173,15 +170,15 @@ const MandelbrotSetWidget = ({match}) => {
           if (n === maxIter) {
             image.im.set(x, y, p.color(0))
           } else {
-            let brightness = p.map(n, 0, maxIter, 0, 1);
+            let hue = p.map(n, 0, maxIter, 0, 1);
             if (image.isReference) {
-              brightness = p.map(Math.sqrt(brightness), 0, 1, 260, 120);
+              hue = p.map(Math.sqrt(hue), 0, 1, 260, 120);
             } else {
-              brightness = p.map(Math.sqrt(brightness), 0, 1, 120, 260);
+              hue = p.map(Math.sqrt(hue), 0, 1, 120, 260);
             }
             let luminance = p.map(n, 0, maxIter, 0, 1);
             luminance = p.map(Math.sqrt(luminance), 0, 1, 255, 0);
-            image.im.set(x, y, p.color(brightness, 100, luminance))
+            image.im.set(x, y, p.color(hue, 100, luminance))
           }
         }
       }
@@ -365,10 +362,6 @@ const MandelbrotSetWidget = ({match}) => {
       mouseDownPosition.current = null;    }
   }
 
-  const sketchHeightStyle = {
-    height: `${canvasDimensions.height}px`
-  }
-
   const handleMagnification = (value) => {
     switch (value) {
       case "minimize":
@@ -408,6 +401,9 @@ const MandelbrotSetWidget = ({match}) => {
     setSelectOpen(false)
   }
 
+  const sketchHeightStyle = {
+    height: `${canvasDimensions.height}px`
+  }
   const classes = useStyles();
 
   return (

@@ -75,9 +75,9 @@ export default function Header(props) {
           </IconButton>
         </Toolbar>
 
-        <Drawer anchor={"right"} open={menuOpen} onClose={() => toggleDrawer(false)} onOpen={() => toggleDrawer(true)}>
+        <Drawer anchor={"right"} open={menuOpen} onClose={() => toggleDrawer(false)}>
           {sections.map((section) => (
-            <Link key={section.title} to={section.route} className={classes.toolbarLink}>
+            <Link key={section.title} to={section.route} className={classes.toolbarLink} onClick={() => toggleDrawer(false)}>
               {section.title}
             </Link>
           ))}

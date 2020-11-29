@@ -9,7 +9,6 @@ import SinusoidFollower from "../common/sinusoid/SinusoidFollower";
 import Container from "@material-ui/core/Container";
 import SimpleSliderController from "../common/SimpleSliderController";
 import AdditiveSinusoidFollower from "../common/sinusoid/AdditiveSinusoidFollower";
-import AdditiveUnitCircle from "../common/AdditiveUnitCircle";
 import UnitCircle from "../common/UnitCircle";
 import AdditiveUnitCircleWithFollower from "../common/sinusoid/AdditiveUnitCircleWithFollower";
 

@@ -1,11 +1,8 @@
 import React, {createContext} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-import Header from '../Header';
 import Sidebar from '../Sidebar';
-import Footer from '../Footer';
 import {Route} from "react-router-dom";
 
 import AliasingWidget from './aliasing/AliasingWidget';
@@ -28,19 +25,13 @@ import sinusoidPropertiesImage from "../../media/widgets/gif/sinusoid-properties
 import interferenceImage from "../../media/widgets/gif/intereference.gif";
 import mandelbrotSetImage from "../../media/widgets/gif/mandelbrot-set.gif";
 import juliaSetImage from "../../media/widgets/gif/julia-set.gif";
+import JuliaSetDisassembledWidget from "./julia-set-disassembled/JuliaSetDisassembledWidget";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
     marginTop: theme.spacing(3),
   },
 }));
-
-const sections = [
-  {title: 'Articles', route: '#'},
-  {title: 'Widgets', route: '/widgets'},
-  {title: 'Videos', route: '#'},
-  {title: 'Plugins', route: '#'}
-];
 
 const widgets = [
   {
@@ -120,7 +111,8 @@ const widgets = [
     route: "/widgets/mandelbrot-set",
     image: mandelbrotSetImage,
     shortDescription: "This is the infamously infinite Mandelbrot set. You've probably already seen visualizations of the Mandelbrot set as a video dragging you down into a never ending spiral of self similar shapes, or through someone trying to explain what infinity means and the inherent beauty of mathematics or your stoner friend suggesting that we live in a fractal hologram. Whatever the case may be, the generation of the Mandelbrot set, and the mathematics behind it is fairly simple. <br/><br/>\n" +
-      "All real numbers can be expressed on a one dimensional number line. We know this. We also have a set of hypothetical numbers, called the imaginary numbers that can also be expressed on a one dimensional imaginary number line. Combine the 2 together orthogonally, and we get a 2 dimensional complex plane, made of a combination of real and imaginary numbers where <i>Z = a + bi</i>, where a is real and bi is imaginary. For our illustration, we can consider the canvas we are drawing on as a complex plane. For every point on the canvas, we calculate a function <i>f(z) = z<sup>2</sup> + c</i>, where is <i>c</i> is the point in consideration, and we recursively iterate over the function where <i>z</i> starts from 0, and the result is fed back into the function over and over again. If the function over many iterations results in a number which leaves the canvas, we consider this as unstable and ignore it. But if, for a certain value of <i>c</i>, the function manages to produce a number which stays within the bounds of the canvas even when iterated endlessly, we consider this as a complex number which is part of the Mandelbrot set (coloured in black). In this canvas, there are infinitely many numbers which are unstable, and infinitely many numbers which are stable and part of the Mandelbrot set. But the really interesting bit is the boundary between these 2 sets of numbers. The boundary forms a fractal patterns that evolves and grows and falls back on to itself when zoom in and recalculate with finer accuracy.",
+      "All real numbers can be expressed on a one dimensional number line. We know this. We also have a set of hypothetical numbers, called the imaginary numbers that can also be expressed on a one dimensional imaginary number line. Combine the 2 together orthogonally, and we get a 2 dimensional complex plane, made of a combination of real and imaginary numbers where <i>Z = a + bi</i>, where <i>a</i> is real and <i>bi</i> is imaginary. For our illustration, we can consider the canvas we are drawing on as a complex plane. For every point on the canvas, we calculate a function <i>f(z) = z<sup>2</sup> + c</i>, where is <i>c</i> is the point in consideration, and we recursively iterate over the function where <i>z</i> starts from 0, and the result is fed back into the function over and over again. If the function over many iterations results in a number which leaves the canvas, we consider this as unstable and ignore it. But if, for a certain value of <i>c</i>, the function manages to produce a number which stays within the bounds of the canvas even when iterated endlessly, we consider this as a complex number which is part of the Mandelbrot set (coloured in black). In this canvas, there are infinitely many numbers which are unstable, and infinitely many numbers which are stable and part of the Mandelbrot set. But the really interesting bit is the boundary between these 2 sets of numbers. The boundary forms a fractal patterns that evolves and grows and falls back on to itself when zoom in and recalculate with finer accuracy.<br/><br/>\n" +
+      "Because of Javascript's limited floating point accuracy however, the resolution is lost at a certain zoom level. It is possible to use much higher precision with custom data types, but calculations tend to be incredibly slow and the interactivity would be lost. The current implementation is a compromise to reduce precision to achieve lower wait time while recalculating the image.",
     component: MandelbrotSetWidget
   }, {
     id: "julia-set",
@@ -129,9 +121,18 @@ const widgets = [
     category: "Miscalleneous Mathematics",
     route: "/widgets/julia-set",
     image: juliaSetImage,
-    shortDescription: "This is the infamously infinite Mandelbrot set. You've probably already seen visualizations of the Mandelbrot set as a video dragging you down into a never ending spiral of self similar shapes, or through someone trying to explain what infinity means and the inherent beauty of mathematics or your stoner friend suggesting that we live in a fractal hologram. Whatever the case may be, the generation of the Mandelbrot set, and the mathematics behind it is fairly simple. <br/><br/>\n" +
-      "All real numbers can be expressed on a one dimensional number line. We know this. We also have a set of hypothetical numbers, called the imaginary numbers that can also be expressed on a one dimensional imaginary number line. Combine the 2 together orthogonally, and we get a 2 dimensional complex plane, made of a combination of real and imaginary numbers where <i>Z = a + bi</i>, where a is real and bi is imaginary. For our illustration, we can consider the canvas we are drawing on as a complex plane. For every point on the canvas, we calculate a function <i>f(z) = z<sup>2</sup> + c</i>, where is <i>c</i> is the point in consideration, and we recursively iterate over the function where <i>z</i> starts from 0, and the result is fed back into the function over and over again. If the function over many iterations results in a number which leaves the canvas, we consider this as unstable and ignore it. But if, for a certain value of <i>c</i>, the function manages to produce a number which stays within the bounds of the canvas even when iterated endlessly, we consider this as a complex number which is part of the Mandelbrot set (coloured in black). In this canvas, there are infinitely many numbers which are unstable, and infinitely many numbers which are stable and part of the Mandelbrot set. But the really interesting bit is the boundary between these 2 sets of numbers. The boundary forms a fractal patterns that evolves and grows and falls back on to itself when zoom in and recalculate with finer accuracy.",
+    shortDescription: "The Julia set and the Mandelbrot set are quite similar to each other. Infact, the core equation is the same for both. When iterating this function <i>f(z) = z<sup>2</sup> + c</i> endlessly, if the magnitude of the complex number is finite, the complex number <i>z</i> is said to be stable. If the value blows up and keep increasing, the number is said to unstable. In both Julia set and Mandelbrot set, we are interested in the numbers that are stable, and these numbers are part of the respective sets. The main differentiator between the 2 sets is the complex number <i>c</i> in the equation.<br/><br/>\n" +
+      "In the <a style='color: white' href=\"#/widgets/mandelbrot-set\">Mandelbrot Set</a> widget, we took each pixel in the canvas, and calculated the equation by setting <i>z=0</i> and <i>c</i> as the pixel value, and iterated it several times to calculate if the number would blow up or not. In this widget, we set <i>z</i> as the pixel value, and set <i>c</i> as a constant value for all pixels. Doing this changes the dynamics of how the function behaves over iteration and gives rise to a unique set of numbers which are stable, and represent the Julia set. Changing the constant complex number <i>c</i> gives rise to a different, yet unique set of stable values. Overlayed in the background is the Mandelbrot set and the coordinates of the complex number added to the function in each iteration. To change the complex number <i>c</i>, use the Complex value selection below, or switch to the Mandelbrot set view by clicking on the overlayed image, and then play around with the complex number coordinate.",
     component: JuliaSetWidget
+  }, {
+    id: "julia-set-disassembled",
+    sidebarTitle: "Julia Set Disassembled",
+    title: "Julia Set Disassembled",
+    category: "Miscalleneous Mathematics",
+    route: "/widgets/julia-set-disassembled",
+    image: juliaSetImage,
+    shortDescription: "This widget is inspired by a Numberphile video called <a style='color: white' href=\"https://www.youtube.com/watch?v=FFftmWSzgmk&ab_channel=Numberphile\" target=\"_blank\">What's so special about the Mandelbrot Set?</a> Check it out to understand the behaviour of the Mandelbrot and Julia set better, and to get a hold of how to use this widget better.",
+    component: JuliaSetDisassembledWidget
   }
 ]
 
@@ -141,9 +142,7 @@ export default function WidgetHome() {
   const classes = useStyles();
   return (
     <>
-      <CssBaseline/>
       <Container maxWidth="lg">
-        <Header sections={sections}/>
           <WidgetContext.Provider value={widgets}>
             <Grid container spacing={5} className={classes.mainGrid}>
               {widgets.map(widget => (
@@ -155,7 +154,6 @@ export default function WidgetHome() {
             </Grid>
           </WidgetContext.Provider>
       </Container>
-      <Footer/>
     </>
   );
 }

@@ -26,8 +26,7 @@ const WidgetsArsenal = (props) => {
   return (
     <Container >
       {Array.from(widgetsGroupedByCategory).map(([category, list]) => (
-
-        <Grid container spacing={2} gutterBottom={2}>
+        <Grid container spacing={2} key={category}>
           <Grid item xs={12}>
             <Typography className={classes.categoryTitle} variant={"h5"}>
               {category}

@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {isMobile} from "react-device-detect";
+import {BrowserView, isMobile} from "react-device-detect";
 import p5 from 'p5';
 import WidgetHeading from "../common/WidgetHeading";
 import styles from "../../../styles/widgets/SliderContainer.module.css";
@@ -7,7 +7,6 @@ import Grid from "@material-ui/core/Grid";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Button from "@material-ui/core/Button";
 import {Typography} from "@material-ui/core";
-import {BrowserView} from 'react-device-detect';
 import {makeStyles} from "@material-ui/core/styles";
 
 const MandelbrotSetWidget = ({match}) => {

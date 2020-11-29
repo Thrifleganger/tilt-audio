@@ -107,7 +107,7 @@ export default function Sidebar(props) {
         Social
       </Typography>
       {social.map((network) => (
-        <a key={network.name} className={classes.linkStyle} href={network.url} target={"_black"}>
+        <a key={network.name} className={classes.linkStyle} href={network.url} target={"_blank"} rel={"noreferrer"}>
           <Grid container direction="row" spacing={1} alignItems="center">
             <Grid item>
               <network.icon/>
