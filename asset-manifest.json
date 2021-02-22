@@ -1,35 +1,38 @@
 {
   "files": {
     "main.css": "/tilt-audio/static/css/main.71de2751.chunk.css",
-    "main.js": "/tilt-audio/static/js/main.e1bfd887.chunk.js",
-    "main.js.map": "/tilt-audio/static/js/main.e1bfd887.chunk.js.map",
+    "main.js": "/tilt-audio/static/js/main.6df5a137.chunk.js",
+    "main.js.map": "/tilt-audio/static/js/main.6df5a137.chunk.js.map",
     "runtime-main.js": "/tilt-audio/static/js/runtime-main.f75e049d.js",
     "runtime-main.js.map": "/tilt-audio/static/js/runtime-main.f75e049d.js.map",
     "static/css/2.d98526b1.chunk.css": "/tilt-audio/static/css/2.d98526b1.chunk.css",
-    "static/js/2.b7cbc004.chunk.js": "/tilt-audio/static/js/2.b7cbc004.chunk.js",
-    "static/js/2.b7cbc004.chunk.js.map": "/tilt-audio/static/js/2.b7cbc004.chunk.js.map",
+    "static/js/2.f2bf5ce7.chunk.js": "/tilt-audio/static/js/2.f2bf5ce7.chunk.js",
+    "static/js/2.f2bf5ce7.chunk.js.map": "/tilt-audio/static/js/2.f2bf5ce7.chunk.js.map",
     "static/js/3.af72c2e3.chunk.js": "/tilt-audio/static/js/3.af72c2e3.chunk.js",
     "static/js/3.af72c2e3.chunk.js.map": "/tilt-audio/static/js/3.af72c2e3.chunk.js.map",
     "index.html": "/tilt-audio/index.html",
     "static/css/2.d98526b1.chunk.css.map": "/tilt-audio/static/css/2.d98526b1.chunk.css.map",
     "static/css/main.71de2751.chunk.css.map": "/tilt-audio/static/css/main.71de2751.chunk.css.map",
-    "static/js/2.b7cbc004.chunk.js.LICENSE.txt": "/tilt-audio/static/js/2.b7cbc004.chunk.js.LICENSE.txt",
+    "static/js/2.f2bf5ce7.chunk.js.LICENSE.txt": "/tilt-audio/static/js/2.f2bf5ce7.chunk.js.LICENSE.txt",
     "static/media/2d-motion.72fa57dc.gif": "/tilt-audio/static/media/2d-motion.72fa57dc.gif",
     "static/media/index.css": "/tilt-audio/static/media/TwCenMTStd.d71649bd.otf",
     "static/media/aliasing.c2e0555d.gif": "/tilt-audio/static/media/aliasing.c2e0555d.gif",
     "static/media/intereference.bacd5780.gif": "/tilt-audio/static/media/intereference.bacd5780.gif",
+    "static/media/julia-set-disassembled.69a9c265.gif": "/tilt-audio/static/media/julia-set-disassembled.69a9c265.gif",
     "static/media/julia-set.7b9c338b.gif": "/tilt-audio/static/media/julia-set.7b9c338b.gif",
     "static/media/mandelbrot-set.e19f7a51.gif": "/tilt-audio/static/media/mandelbrot-set.e19f7a51.gif",
     "static/media/phasor-introduction.feae4ef3.gif": "/tilt-audio/static/media/phasor-introduction.feae4ef3.gif",
     "static/media/phasor-variable-frequency.61a25319.gif": "/tilt-audio/static/media/phasor-variable-frequency.61a25319.gif",
     "static/media/sine-cosine.8c91af21.gif": "/tilt-audio/static/media/sine-cosine.8c91af21.gif",
-    "static/media/sinusoid-properties.ed6c4092.gif": "/tilt-audio/static/media/sinusoid-properties.ed6c4092.gif"
+    "static/media/sinusoid-properties.ed6c4092.gif": "/tilt-audio/static/media/sinusoid-properties.ed6c4092.gif",
+    "static/media/wagon-wheel-effect-1.6193293a.gif": "/tilt-audio/static/media/wagon-wheel-effect-1.6193293a.gif",
+    "static/media/wagon-wheel-effect-2.5207655f.gif": "/tilt-audio/static/media/wagon-wheel-effect-2.5207655f.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.f75e049d.js",
     "static/css/2.d98526b1.chunk.css",
-    "static/js/2.b7cbc004.chunk.js",
+    "static/js/2.f2bf5ce7.chunk.js",
     "static/css/main.71de2751.chunk.css",
-    "static/js/main.e1bfd887.chunk.js"
+    "static/js/main.6df5a137.chunk.js"
   ]
 }
