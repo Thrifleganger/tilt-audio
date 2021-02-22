@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 import Grid from "@material-ui/core/Grid";
 import PropTypes from "prop-types";
 import styles from "../../../styles/widgets/SliderContainer.module.css"
-import Dial from "../common/custom-component/Dial";
+import Dial from "./custom-component/Dial";
 import FormGroup from "@material-ui/core/FormGroup";
 import Switch from "@material-ui/core/Switch";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 
-const SinusoidalMotion2DController = (props) => {
+const SwitchAndSliderController = (props) => {
 
   const {sliders, buttons} = props;
   const map = new Map();
@@ -56,7 +56,7 @@ const SinusoidalMotion2DController = (props) => {
   );
 }
 
-SinusoidalMotion2DController.propTypes = {
+SwitchAndSliderController.propTypes = {
   sliders: PropTypes.arrayOf(
     PropTypes.shape({
       sliderModel: PropTypes.object.isRequired,
@@ -72,4 +72,4 @@ SinusoidalMotion2DController.propTypes = {
   ).isRequired
 }
 
-export default React.memo(SinusoidalMotion2DController);
+export default React.memo(SwitchAndSliderController);

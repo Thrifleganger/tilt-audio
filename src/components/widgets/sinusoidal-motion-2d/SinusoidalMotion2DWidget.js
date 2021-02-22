@@ -7,7 +7,7 @@ import p5 from 'p5';
 import {SinusoidalBody} from "./SinusoidalBody";
 import SliderModel from "../common/SliderModel";
 import Container from "@material-ui/core/Container";
-import SinusoidalMotion2DController from "./SinusoidalMotion2DController";
+import SwitchAndSliderController from "../common/SwitchAndSliderController";
 
 const SinusoidalMotion2DWidget = ({match}) => {
 
@@ -100,7 +100,7 @@ const SinusoidalMotion2DWidget = ({match}) => {
       </div>
       <div className={styles.sliderContainer}>
         <Container maxWidth="sm">
-          <SinusoidalMotion2DController sliders={sliderControls} buttons={buttonControls} color={"#ffa6a6"}/>
+          <SwitchAndSliderController sliders={sliderControls} buttons={buttonControls} color={"#ffa6a6"}/>
         </Container>
       </div>
     </Grid>

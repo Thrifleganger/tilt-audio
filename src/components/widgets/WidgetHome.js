@@ -14,6 +14,9 @@ import PhasorIntroductionWidget from "./phasor-introduction/PhasorIntroductionWi
 import PhasorVariableFrequencyWidget from "./phasor-variable-frequency/PhasorVariableFrequency";
 import MandelbrotSetWidget from "./mandelbrot-set/MandelbrotSetWidget";
 import JuliaSetWidget from "./julia-set/JuliaSetWidget"
+import JuliaSetDisassembledWidget from "./julia-set-disassembled/JuliaSetDisassembledWidget";
+import WagonWheelEffectWidget from "./wagon-wheel-effect/WagonWheelEffectWidget";
+import WagonWheelEffectExpandedWidget from "./wagon-wheel-effect-expanded/WagonWheelEffectExpandedWidget";
 import WidgetsArsenal from "./WidgetsArsenal";
 
 import phasorVariableFrequencyImage from "../../media/widgets/gif/phasor-variable-frequency.gif";
@@ -25,7 +28,11 @@ import sinusoidPropertiesImage from "../../media/widgets/gif/sinusoid-properties
 import interferenceImage from "../../media/widgets/gif/intereference.gif";
 import mandelbrotSetImage from "../../media/widgets/gif/mandelbrot-set.gif";
 import juliaSetImage from "../../media/widgets/gif/julia-set.gif";
-import JuliaSetDisassembledWidget from "./julia-set-disassembled/JuliaSetDisassembledWidget";
+import juliaSetDisassembledImage from "../../media/widgets/gif/julia-set-disassembled.gif";
+import wagonWheelEffect1Image from "../../media/widgets/gif/wagon-wheel-effect-1.gif";
+import wagonWheelEffect2Image from "../../media/widgets/gif/wagon-wheel-effect-2.gif";
+
+
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -95,6 +102,29 @@ const widgets = [
       "Moreover, the visualizations result in unique and distinct patterns when tracing the added phasor, patterns that seem to evolve and grow over time, but are entirely reproducible, and follow a static pattern for whole number ratios, and a more erratic and evolving pattern when not. The base wave (blue) is 6Hz in frequency. ",
     component: PhasorVariableFrequencyWidget
   }, {
+    id: "wagon-wheel-effect-1",
+    sidebarTitle: "Wagon Wheel Effect",
+    title: "Wagon Wheel Effect",
+    category: "Digital Audio Fundamentals",
+    route: "/widgets/wagon-wheel-effect-1",
+    image: wagonWheelEffect1Image,
+    shortDescription: "The wagon-wheel effect is an optical illusion in which a spoked wheel appears to rotate differently from its true rotation. The wheel can appear to rotate more slowly than the true rotation, it can appear stationary, or it can appear to rotate in the opposite direction from the true rotation.</br></br>\n" +
+      "The wagon-wheel effect is most often seen in film or television depictions of stagecoaches or wagons in Western movies, although recordings of any regularly spoked rotating object will show it, such as helicopter rotors, aircraft propellers and car wheels. In these recorded media, the effect is a result of temporal aliasing.</br></br>\n" +
+      "It's easy to visualize why this happens. In this widget, the <i>Speed</i> of rotation is synced up with the <i>Frame Rate</i>, so the effects I mention occur for any frame rate. I'll take the example of a 4 spoked wheel. Since it has 4 spokes, equidistant from each other, the angle between them is 90 degrees. So, if the number of degrees of rotation <b>per frame</b> is any multiple of 90 degrees, then at every frame, one of the other spokes of the wheel falls in the same location when compared to the previous frame. This gives the standstill illusion of the wheel. The only thing that gives away the wheel's rotation are the colours flickering. At 360 degrees of rotation per frame, no matter what the spoke count is, the previous frame and the next frame are indistinguishable from each other. Around the boundary conditions of the multiples of 90 is where things get interesting. The wheel appears to slow down as it approaches the boundary and speed up in the opposite direction when the rotations exceed past the boundary.",
+    component: WagonWheelEffectWidget
+  }, {
+    id: "wagon-wheel-effect-2",
+    sidebarTitle: "Wagon Wheel Effect Expanded",
+    title: "Wagon Wheel Effect Expanded",
+    category: "Digital Audio Fundamentals",
+    route: "/widgets/wagon-wheel-effect-2",
+    image: wagonWheelEffect2Image,
+    shortDescription: "The <a style='color: white' href=\"#/widgets/wagon-wheel-effect-1\">wagon-wheel effect</a>, as illustrated in the first widget, curiously falls under the category of Digital Audio Fundamentals. This hasn't been miscategorised, but rather is a good starting point to talk about temporal aliasing in audio signals.</br></br>\n" +
+      "On the left side, we have a continuously rotating wheel. This wheel has exactly one spoke. The frame rate of this animation is 60fps. The speed of rotation of the wheel is 6 degrees of rotation per frame. All of this means that the wheel is completing one rotation in exactly one second.</br></br>\n" +
+      "On the right side, we have the sampled the rotation into discrete values, rather than being continuous. The <b>sampling interval</b> determines how often a snapshot of the rotating wheel is captured. At a sampling interval of 1, there is no difference from the original wheel, since the snapshots are captured at every frame. As you increase the sampling interval, the snapshots get jittery, and continue to convey the correct direction of the wheel till 30 frames (half the frame rate). When the sampling interval is exactly half the frame rate, the direction of motion cannot be determined. And as the sampling interval increases beyond that, the rotation of motion seems to reverse itself when we look at the snapshots alone.</br></br>\n" +
+      "This is temporal aliasing in the visual domain, a concept quite similar to aliasing of audio signals. This happens when choosing a low sampling interval when the motion is fast. And the characteristics of aliasing is determined by the relationship between the sampling rate, the frame rate and the speed of rotation.  ",
+    component: WagonWheelEffectExpandedWidget
+  }, {
     id: "aliasing",
     sidebarTitle: "Aliasing",
     title: "Aliasing",
@@ -130,7 +160,7 @@ const widgets = [
     title: "Julia Set Disassembled",
     category: "Miscalleneous Mathematics",
     route: "/widgets/julia-set-disassembled",
-    image: juliaSetImage,
+    image: juliaSetDisassembledImage,
     shortDescription: "This widget is inspired by a Numberphile video called <a style='color: white' href=\"https://www.youtube.com/watch?v=FFftmWSzgmk&ab_channel=Numberphile\" target=\"_blank\">What's so special about the Mandelbrot Set?</a> Check it out to understand the behaviour of the Mandelbrot and Julia set better, and to get a hold of how to use this widget better.",
     component: JuliaSetDisassembledWidget
   }
