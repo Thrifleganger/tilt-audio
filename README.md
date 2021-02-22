@@ -9,3 +9,7 @@ A front end app for digital audio concepts, articles and interactive widgets
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+Find the hosted website here: 
+
+[https://thrifleganger.github.io/tilt-audio/#/](https://thrifleganger.github.io/tilt-audio/#/)
