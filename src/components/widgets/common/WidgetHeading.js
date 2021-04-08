@@ -16,6 +16,7 @@ const useStyles = makeStyles(() => ({
   headingCategory: {
     fontSize: "1.5em",
     margin: "0 0 0.5em 0.5em",
+    textAlign: "right"
   }
 }));
 

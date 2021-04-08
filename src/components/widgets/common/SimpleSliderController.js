@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from "@material-ui/core/Grid";
 import PropTypes from "prop-types";
 import styles from "../../../styles/widgets/SliderContainer.module.css"
-import Dial from "../common/Dial";
+import Dial from "./custom-component/Dial";
 
 const SimpleSliderController = (props) => {
   const style = {

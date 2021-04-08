@@ -3,11 +3,12 @@ import p5 from 'p5';
 import Grid from "@material-ui/core/Grid";
 import styles from "../../../styles/widgets/SliderContainer.module.css";
 import WidgetHeading from "../common/WidgetHeading";
-import UnitCircle from "./UnitCircle";
-import SinusoidFollower from "./SinusoidFollower";
+import SineCosineUnitCircle from "./SineCosineUnitCircle";
+import SinusoidFollower from "../common/sinusoid/SinusoidFollower";
 import SliderModel from "../common/SliderModel";
 import Container from "@material-ui/core/Container";
 import SimpleSliderController from "../common/SimpleSliderController";
+import {isMobile} from 'react-device-detect';
 
 const SineCosineWidget = ({match}) => {
 
@@ -26,7 +27,8 @@ const SineCosineWidget = ({match}) => {
     6,
     1,
     14,
-    1
+    1,
+    "Hz"
   );
 
   const speedSlider = new SliderModel(
@@ -46,18 +48,26 @@ const SineCosineWidget = ({match}) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     myP5 = new p5(sketch, canvasRef.current);
-  }, [myP5])
+    return function cleanup() {
+      myP5.remove();
+    }
+  }, [])
 
   const sketch = (p) => {
     p.setup = () => {
       console.log("Sine function canvas setup");
-      p.createCanvas(canvasRef.current.clientWidth, 500);
+      if (isMobile) {
+        p.createCanvas(canvasRef.current.clientWidth, 300);
+      } else {
+        p.createCanvas(canvasRef.current.clientWidth, 500);
+      }
       const radius = p.width/10;
       const unitCircleXY = {x: p.width/16 + radius, y: p.width/16 + radius};
       const sineXY = {x: p.width/5 + radius, y: p.width/16 + radius};
       const cosXY = {x: p.width/16 + radius, y: p.width/5 + radius};
-      unitCircle = new UnitCircle(p, unitCircleXY, radius, frequencySlider.defaultValue);
+      unitCircle = new SineCosineUnitCircle(p, unitCircleXY, radius, frequencySlider.defaultValue);
       sineFollower = new SinusoidFollower(p, sineXY, frequencySlider.defaultValue, radius, 0.0, p.color(197, 255, 116), false);
       cosFollower = new SinusoidFollower(p, cosXY, frequencySlider.defaultValue, radius, Math.PI*3/2, p.color(226, 166, 255), true);
     }
@@ -70,7 +80,11 @@ const SineCosineWidget = ({match}) => {
     }
 
     p.windowResized = () => {
-      p.resizeCanvas(canvasRef.current.clientWidth, 500);
+      if (isMobile) {
+        p.createCanvas(canvasRef.current.clientWidth, 300);
+      } else {
+        p.createCanvas(canvasRef.current.clientWidth, 500);
+      }
     }
   }
 
@@ -108,7 +122,7 @@ const SineCosineWidget = ({match}) => {
   return (
     <Grid item xs={12} md={8}>
       <WidgetHeading match={match} />
-      <div className={styles.canvasContainer}>
+      <div className={`${styles.canvasContainer} ${isMobile ? styles.canvasContainerMobile : styles.canvasContainerDesktop}`}>
         <div ref={canvasRef}/>
       </div>
       <div className={styles.sliderContainer}>

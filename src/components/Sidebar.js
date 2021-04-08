@@ -23,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
   sidebarSection: {
     marginTop: theme.spacing(3)
   },
+  description: {
+    textAlign: "justify",
+    fontFamily: "TwCenMTStd-Light"
+  },
   searchBox: {
     marginTop: '2em',
     padding: '2px 4px',
@@ -74,10 +78,7 @@ export default function Sidebar(props) {
   return (
     <Grid item xs={12} md={4}>
       <Paper elevation={0} className={classes.sidebarAboutBox}>
-        <Typography variant="h6" gutterBottom>
-          {selectedWidget.sidebarTitle}
-        </Typography>
-        <Typography>{selectedWidget.shortDescription}</Typography>
+        <Typography className={classes.description} dangerouslySetInnerHTML={{__html: selectedWidget.shortDescription}}/>
       </Paper>
 
       <Paper component="form" className={classes.searchBox}>
@@ -106,8 +107,8 @@ export default function Sidebar(props) {
         Social
       </Typography>
       {social.map((network) => (
-        <a className={classes.linkStyle} href={network.url} target={"_black"}>
-          <Grid key={network.name} container direction="row" spacing={1} alignItems="center">
+        <a key={network.name} className={classes.linkStyle} href={network.url} target={"_blank"} rel={"noreferrer"}>
+          <Grid container direction="row" spacing={1} alignItems="center">
             <Grid item>
               <network.icon/>
             </Grid>

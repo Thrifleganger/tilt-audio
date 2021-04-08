@@ -4,9 +4,10 @@ import p5 from 'p5';
 import Grid from "@material-ui/core/Grid";
 import styles from "../../../styles/widgets/SliderContainer.module.css";
 import Container from "@material-ui/core/Container";
-import SineWave from "../common/SineWave";
+import SineWave from "../common/sinusoid/SineWave";
 import WidgetHeading from "../common/WidgetHeading";
 import SimpleSliderController from "../common/SimpleSliderController";
+import {isMobile} from 'react-device-detect';
 
 const SineWaveWidget = ({match}) => {
 
@@ -16,7 +17,7 @@ const SineWaveWidget = ({match}) => {
     0.7,
     0,
     1,
-    0.01
+    0.01,
   );
 
   const frequencySlider = new SliderModel(
@@ -25,7 +26,8 @@ const SineWaveWidget = ({match}) => {
     1,
     1,
     6,
-    1
+    1,
+    "Hz"
   );
 
   const phaseSlider = new SliderModel(
@@ -34,7 +36,8 @@ const SineWaveWidget = ({match}) => {
     0,
     -1,
     1,
-    0.01
+    0.01,
+    "π"
   );
 
   const offsetSlider = new SliderModel(
@@ -51,13 +54,21 @@ const SineWaveWidget = ({match}) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     myP5 = new p5(sketch, canvasRef.current);
-  }, [myP5])
+    return function cleanup() {
+      myP5.remove();
+    }
+  }, [])
 
   const sketch = (p) => {
     p.setup = () => {
       console.log("Sine wave canvas setup");
-      p.createCanvas(canvasRef.current.clientWidth, 500);
+      if (isMobile) {
+        p.createCanvas(canvasRef.current.clientWidth, 300);
+      } else {
+        p.createCanvas(canvasRef.current.clientWidth, 500);
+      }
       sineWave = new SineWave(p, {x: 0, y: p.height/2}, {x: p.width, y: p.height},
         amplitudeSlider.defaultValue, frequencySlider.defaultValue, 0, p.color(255, 166, 166));
     }
@@ -71,7 +82,11 @@ const SineWaveWidget = ({match}) => {
     }
 
     p.windowResized = () => {
-      p.resizeCanvas(canvasRef.current.clientWidth, 500);
+      if (isMobile) {
+        p.createCanvas(canvasRef.current.clientWidth, 300);
+      } else {
+        p.createCanvas(canvasRef.current.clientWidth, 500);
+      }
     }
   }
 
@@ -109,7 +124,7 @@ const SineWaveWidget = ({match}) => {
   return (
     <Grid item xs={12} md={8}>
       <WidgetHeading match={match} />
-      <div className={styles.canvasContainer}>
+      <div className={`${styles.canvasContainer} ${isMobile ? styles.canvasContainerMobile : styles.canvasContainerDesktop}`}>
         <div ref={canvasRef}/>
       </div>
       <div className={styles.sliderContainer}>

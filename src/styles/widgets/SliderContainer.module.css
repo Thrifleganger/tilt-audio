@@ -1,17 +1,24 @@
 .canvasContainer {
     border-style: solid;
     border-width: 2px;
-    border-radius: 20px;
+    border-radius: 10px;
     border-color: #b5b5b5;
     overflow: hidden;
-    height: 500px;
     box-shadow: 3px 4px 16px 5px rgb(0, 0, 0);
+}
+
+.canvasContainerDesktop {
+    height: 500px;
+}
+
+.canvasContainerMobile {
+    height: 300px;
 }
 
 .sliderContainer {
     background: linear-gradient(180deg, #41546b, #7891a5);
     width: 100%;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-top: 1em;
     padding: 1em 0;
     box-shadow: 3px 4px 16px -4px rgba(0,0,0,1);

@@ -3,27 +3,47 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import WidgetHome from "./components/widgets/WidgetHome";
 import {createMuiTheme, ThemeProvider} from "@material-ui/core/styles";
+import {HashRouter, Route} from "react-router-dom";
+import "./index.css"
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Container from "@material-ui/core/Container";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import VideoHome from "./components/videos/VideoHome";
 
 const themeDark = createMuiTheme({
   palette: {
     type: 'dark'
   },
   typography: {
-    fontFamily: '"Tw Cen Mt", "Helvetica", "Arial", "sans-serif"',
+    fontFamily: '"TwCenMTStd", "Helvetica", "Arial", "sans-serif"',
     fontSize: 16
   }
 });
 
+const sections = [
+  {title: 'Articles', route: '#'},
+  {title: 'Widgets', route: '/widgets'},
+  {title: 'Videos', route: '/videos'},
+  {title: 'Plugins', route: '#'}
+];
+
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={themeDark}>
-      <WidgetHome/>
+      <HashRouter>
+        <CssBaseline/>
+        <Container maxWidth="lg">
+          <Header sections={sections}/>
+        </Container>
+        <Route path={"/videos"} component={VideoHome}/>
+        <Route path={"/widgets"} component={WidgetHome}/>
+        <Route path={"/"} exact={true} component={WidgetHome}/>
+        <Footer/>
+      </HashRouter>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
