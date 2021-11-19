@@ -17,6 +17,9 @@ import JuliaSetWidget from "./julia-set/JuliaSetWidget"
 import JuliaSetDisassembledWidget from "./julia-set-disassembled/JuliaSetDisassembledWidget";
 import WagonWheelEffectWidget from "./wagon-wheel-effect/WagonWheelEffectWidget";
 import WagonWheelEffectExpandedWidget from "./wagon-wheel-effect-expanded/WagonWheelEffectExpandedWidget";
+import QuantizationAndDitheringWidget from "./quantization-dithering/QuantizationAndDitheringWidget";
+import LissajousCurves from "./lissajous/LissajousCurves";
+import LissajousCurvesConsolidated from "./lissajous/LissajousCurvesConsolidated";
 import WidgetsArsenal from "./WidgetsArsenal";
 
 import phasorVariableFrequencyImage from "../../media/widgets/gif/phasor-variable-frequency.gif";
@@ -31,8 +34,8 @@ import juliaSetImage from "../../media/widgets/gif/julia-set.gif";
 import juliaSetDisassembledImage from "../../media/widgets/gif/julia-set-disassembled.gif";
 import wagonWheelEffect1Image from "../../media/widgets/gif/wagon-wheel-effect-1.gif";
 import wagonWheelEffect2Image from "../../media/widgets/gif/wagon-wheel-effect-2.gif";
-
-
+import lissajousImage from "../../media/widgets/gif/lissajous.gif";
+import lissajous2Image from "../../media/widgets/gif/lissajous2.gif";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -102,6 +105,30 @@ const widgets = [
       "Moreover, the visualizations result in unique and distinct patterns when tracing the added phasor, patterns that seem to evolve and grow over time, but are entirely reproducible, and follow a static pattern for whole number ratios, and a more erratic and evolving pattern when not. The base wave (blue) is 6Hz in frequency. ",
     component: PhasorVariableFrequencyWidget
   }, {
+    id: "lissajous-curves",
+    sidebarTitle: "Lissajous Curves",
+    title: "Lissajous Curves",
+    category: "Origins of the sine wave",
+    route: "/widgets/lissajous-curves",
+    image: lissajousImage,
+    shortDescription: "Phase + Vector = Phasor<br/><br/>\n" +
+      "It's so much easier to visualize adding phasors when compared to adding sinusoidal functions. Especially when the sinusoids have different frequencies. In <a style='color: white' href=\"#/widgets/phasor-introduction\">Phasors: An Introduction</a>, we varied the phase while keeping the frequency constant. Here we'll vary the frequency instead.<br/><br/>\n" +
+      "Adding sinusoids of different frequencies dramatically alters the resulting sinusoid, often in unintuitive ways. But by visualizing phasor addition, the process is demystified and laid bare. You can see exactly why the resulting sinusoid is formed as it is by reducing the Animation Speed.<br/><br/>\n" +
+      "Moreover, the visualizations result in unique and distinct patterns when tracing the added phasor, patterns that seem to evolve and grow over time, but are entirely reproducible, and follow a static pattern for whole number ratios, and a more erratic and evolving pattern when not. The base wave (blue) is 6Hz in frequency. ",
+    component: LissajousCurves
+  }, {
+    id: "lissajous-curves-consolidated",
+    sidebarTitle: "Lissajous Curves Consolidated",
+    title: "Lissajous Curves Consolidated",
+    category: "Origins of the sine wave",
+    route: "/widgets/lissajous-curves-consolidated",
+    image: lissajous2Image,
+    shortDescription: "Phase + Vector = Phasor<br/><br/>\n" +
+      "It's so much easier to visualize adding phasors when compared to adding sinusoidal functions. Especially when the sinusoids have different frequencies. In <a style='color: white' href=\"#/widgets/phasor-introduction\">Phasors: An Introduction</a>, we varied the phase while keeping the frequency constant. Here we'll vary the frequency instead.<br/><br/>\n" +
+      "Adding sinusoids of different frequencies dramatically alters the resulting sinusoid, often in unintuitive ways. But by visualizing phasor addition, the process is demystified and laid bare. You can see exactly why the resulting sinusoid is formed as it is by reducing the Animation Speed.<br/><br/>\n" +
+      "Moreover, the visualizations result in unique and distinct patterns when tracing the added phasor, patterns that seem to evolve and grow over time, but are entirely reproducible, and follow a static pattern for whole number ratios, and a more erratic and evolving pattern when not. The base wave (blue) is 6Hz in frequency. ",
+    component: LissajousCurvesConsolidated
+  }, {
     id: "wagon-wheel-effect-1",
     sidebarTitle: "Wagon Wheel Effect",
     title: "Wagon Wheel Effect",
@@ -133,7 +160,16 @@ const widgets = [
     image: alaisingImage,
     shortDescription: "An aliased signal is an imposter. An unexpected and unwanted intruder in your digital signal. Changing the <b>frequency</b> or <b>sampling interval</b> changes how many samples are captured. If there are less than 3 samples per cycle of the sine wave, you've lost the ability to recreate the sine wave for that frequency. Instead what you get is a signal interpreted with a different frequency.",
     component: AliasingWidget
-  }, {
+  }, /*{
+    id: "quantization-and-dithering",
+    sidebarTitle: "Quantization and Dithering",
+    title: "Quantization and Dithering",
+    category: "Digital Audio Fundamentals",
+    route: "/widgets/quantization-and-dithering",
+    image: alaisingImage,
+    shortDescription: "An aliased signal is an imposter. An unexpected and unwanted intruder in your digital signal. Changing the <b>frequency</b> or <b>sampling interval</b> changes how many samples are captured. If there are less than 3 samples per cycle of the sine wave, you've lost the ability to recreate the sine wave for that frequency. Instead what you get is a signal interpreted with a different frequency.",
+    component: QuantizationAndDitheringWidget
+  },*/ {
     id: "mandelbrot-set",
     sidebarTitle: "Mandelbrot Set",
     title: "Mandelbrot Set",

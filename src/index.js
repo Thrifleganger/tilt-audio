@@ -10,6 +10,8 @@ import Container from "@material-ui/core/Container";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import VideoHome from "./components/videos/VideoHome";
+import PluginHome from "./components/plugins/PluginHome";
+import RepeaterPlugin from "./components/plugins/repeater/RepeaterPlugin";
 
 const themeDark = createMuiTheme({
   palette: {
@@ -22,10 +24,10 @@ const themeDark = createMuiTheme({
 });
 
 const sections = [
-  {title: 'Articles', route: '#'},
+/*  {title: 'Articles', route: '#'},*/
   {title: 'Widgets', route: '/widgets'},
   {title: 'Videos', route: '/videos'},
-  {title: 'Plugins', route: '#'}
+  {title: 'Plugins', route: '/plugins'}
 ];
 
 ReactDOM.render(
@@ -36,6 +38,7 @@ ReactDOM.render(
         <Container maxWidth="lg">
           <Header sections={sections}/>
         </Container>
+        <Route path={"/plugins"} component={PluginHome}/>
         <Route path={"/videos"} component={VideoHome}/>
         <Route path={"/widgets"} component={WidgetHome}/>
         <Route path={"/"} exact={true} component={WidgetHome}/>

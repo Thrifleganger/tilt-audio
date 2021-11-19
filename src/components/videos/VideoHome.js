@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
 const playlists = [
   "PLbqhA-NKGP6DxFIF7K5AhBY9kawUOOM0H",
   "PLbqhA-NKGP6B6V_AiS-jbvSzdd7nbwwCw",
-  "PLbqhA-NKGP6DAkB4eYDsnNMQh9a9nvQh9"
+  "PLbqhA-NKGP6DAkB4eYDsnNMQh9a9nvQh9",
+  "PLbqhA-NKGP6Deb72dGjrwxM0_9lHkKqD_"
 ];
 
 const apiKey = "AIzaSyBsuGb5Wy6zkOL_hjN-sNWBLHvtkmbVJBs";

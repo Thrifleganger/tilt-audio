@@ -87,7 +87,7 @@ export default function WagonWheelEffectWidget(props) {
   }
 
   const handleFrameRateChange = (newValue) => {
-    rotaryWheel.setFrameRate(newValue);
+    rotaryWheel.setFrameRate0(newValue);
   }
 
   const controls = [{
