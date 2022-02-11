@@ -25,7 +25,7 @@ const styles = makeStyles(() => ({
   },
   imageContainer: {
     borderRadius: "30px",
-    margin: "2em 2em",
+    margin: "2em 0.5em",
     overflow: "hidden",
     boxShadow: "0 0 50px #000"
   },
@@ -55,14 +55,14 @@ const PluginThumbDisplay = (props) => {
         ))}
       </Grid>*/}
 
-      <Typography className={classes.mainTitle} variant={"h1"}>
+      <Typography className={classes.mainTitle} variant={"h2"}>
         Plugins I've worked on
       </Typography>
       <Grid container spacing={4}>
         {plugins.clientPlugins.map(plugin => (
           <Grid key={plugin.id} item xs={12} md={6}>
             <a className={classes.link} href={plugin.route} target="_blank">
-              <Typography className={classes.centerAlign} variant={"h3"}><b>{plugin.name}</b></Typography>
+              <Typography className={classes.centerAlign} variant={"h4"}><b>{plugin.name}</b></Typography>
             </a>
             <Typography className={classes.centerAlign} variant={"h6"}>{plugin.description}</Typography>
             <a className={classes.link} href={plugin.route} target="_blank">

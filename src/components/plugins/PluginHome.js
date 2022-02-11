@@ -6,6 +6,7 @@ import beatskillzSequelImage from "../../media/plugins/client/beatskillz-sequel.
 import oceanElementsImage from "../../media/plugins/client/ocean-elements.jpg";
 import scorchImage from "../../media/plugins/client/sauceware-audio-scorch.jpg";
 import knockImage from "../../media/plugins/client/plugins-that-knock.jpg";
+import amplifyImage from "../../media/plugins/client/amplify.jpg";
 import RepeaterPlugin from "./repeater/RepeaterPlugin";
 import {Route} from "react-router-dom";
 
@@ -37,6 +38,12 @@ const clientPlugins = [{
   description: "Scorch is a visual heavy synthesizer. It features an expansive SFZ sound library, a chord generator, a granulizer, an LFO controlled filter section and a stereo delay.",
   image: scorchImage,
   route: "https://saucewareaudio.com/products/scorch"
+}, {
+  id: "amplify",
+  name: "12 Bit Soul - AMPlify",
+  description: "AMPlify brings the 90s sound to modern music production, by including a Transient shaper which tightens or loosens transient response, a soft saturator for low-mid distortion, and a bit crusher.",
+  image: amplifyImage,
+  route: "https://amplifyplugin.net/"
 }, {
   id: "sequel",
   name: "Beatskillz - Sequel",

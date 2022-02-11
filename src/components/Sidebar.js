@@ -10,10 +10,6 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from '@material-ui/icons/Search';
-import GitHubIcon from "@material-ui/icons/GitHub";
-import InstagramIcon from '@material-ui/icons/Instagram';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import FacebookIcon from "@material-ui/icons/Facebook";
 import {WidgetContext} from "./widgets/WidgetHome";
 
 const useStyles = makeStyles((theme) => ({
@@ -48,12 +44,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const social = [
-  {name: 'GitHub', icon: GitHubIcon, url: "https://github.com/Thrifleganger/"},
-  {name: 'YouTube', icon: YouTubeIcon, url: "https://www.youtube.com/channel/UCb_NEjjKOXV9pilaSOjlkZA"},
-  {name: 'Facebook', icon: FacebookIcon, url: "https://www.facebook.com/akash.murthy.319/"},
-  {name: 'Instagram', icon: InstagramIcon, url: "https://www.instagram.com/thrifleganger/"},
-]
+
 
 export default function Sidebar(props) {
   console.log("Rendering sidebar");
@@ -103,19 +94,6 @@ export default function Sidebar(props) {
           )}
         </List>
       </Paper>
-      <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
-        Social
-      </Typography>
-      {social.map((network) => (
-        <a key={network.name} className={classes.linkStyle} href={network.url} target={"_blank"} rel={"noreferrer"}>
-          <Grid container direction="row" spacing={1} alignItems="center">
-            <Grid item>
-              <network.icon/>
-            </Grid>
-            <Grid item>{network.name}</Grid>
-          </Grid>
-        </a>
-      ))}
     </Grid>
   );
 }
