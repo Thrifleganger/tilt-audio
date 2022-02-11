@@ -1,23 +1,24 @@
 {
   "files": {
     "main.css": "/tilt-audio/static/css/main.71de2751.chunk.css",
-    "main.js": "/tilt-audio/static/js/main.289876ca.chunk.js",
-    "main.js.map": "/tilt-audio/static/js/main.289876ca.chunk.js.map",
-    "runtime-main.js": "/tilt-audio/static/js/runtime-main.9fc0adec.js",
-    "runtime-main.js.map": "/tilt-audio/static/js/runtime-main.9fc0adec.js.map",
+    "main.js": "/tilt-audio/static/js/main.fa11b9a1.chunk.js",
+    "main.js.map": "/tilt-audio/static/js/main.fa11b9a1.chunk.js.map",
+    "runtime-main.js": "/tilt-audio/static/js/runtime-main.23fe0355.js",
+    "runtime-main.js.map": "/tilt-audio/static/js/runtime-main.23fe0355.js.map",
     "static/css/2.d98526b1.chunk.css": "/tilt-audio/static/css/2.d98526b1.chunk.css",
-    "static/js/2.91b60839.chunk.js": "/tilt-audio/static/js/2.91b60839.chunk.js",
-    "static/js/2.91b60839.chunk.js.map": "/tilt-audio/static/js/2.91b60839.chunk.js.map",
-    "static/js/3.62b3accf.chunk.js": "/tilt-audio/static/js/3.62b3accf.chunk.js",
-    "static/js/3.62b3accf.chunk.js.map": "/tilt-audio/static/js/3.62b3accf.chunk.js.map",
+    "static/js/2.8893712c.chunk.js": "/tilt-audio/static/js/2.8893712c.chunk.js",
+    "static/js/2.8893712c.chunk.js.map": "/tilt-audio/static/js/2.8893712c.chunk.js.map",
+    "static/js/3.6e020a85.chunk.js": "/tilt-audio/static/js/3.6e020a85.chunk.js",
+    "static/js/3.6e020a85.chunk.js.map": "/tilt-audio/static/js/3.6e020a85.chunk.js.map",
     "index.html": "/tilt-audio/index.html",
     "static/css/2.d98526b1.chunk.css.map": "/tilt-audio/static/css/2.d98526b1.chunk.css.map",
     "static/css/main.71de2751.chunk.css.map": "/tilt-audio/static/css/main.71de2751.chunk.css.map",
-    "static/js/2.91b60839.chunk.js.LICENSE.txt": "/tilt-audio/static/js/2.91b60839.chunk.js.LICENSE.txt",
+    "static/js/2.8893712c.chunk.js.LICENSE.txt": "/tilt-audio/static/js/2.8893712c.chunk.js.LICENSE.txt",
     "static/media/2d-motion.72fa57dc.gif": "/tilt-audio/static/media/2d-motion.72fa57dc.gif",
     "static/media/Repeater.5789f62a.JPG": "/tilt-audio/static/media/Repeater.5789f62a.JPG",
     "static/media/index.css": "/tilt-audio/static/media/TwCenMTStd.d71649bd.otf",
     "static/media/aliasing.c2e0555d.gif": "/tilt-audio/static/media/aliasing.c2e0555d.gif",
+    "static/media/amplify.a06f9d98.jpg": "/tilt-audio/static/media/amplify.a06f9d98.jpg",
     "static/media/beatskillz-sequel.08a2afa2.jpg": "/tilt-audio/static/media/beatskillz-sequel.08a2afa2.jpg",
     "static/media/intereference.bacd5780.gif": "/tilt-audio/static/media/intereference.bacd5780.gif",
     "static/media/julia-set-disassembled.69a9c265.gif": "/tilt-audio/static/media/julia-set-disassembled.69a9c265.gif",
@@ -36,10 +37,10 @@
     "static/media/wagon-wheel-effect-2.5207655f.gif": "/tilt-audio/static/media/wagon-wheel-effect-2.5207655f.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.9fc0adec.js",
+    "static/js/runtime-main.23fe0355.js",
     "static/css/2.d98526b1.chunk.css",
-    "static/js/2.91b60839.chunk.js",
+    "static/js/2.8893712c.chunk.js",
     "static/css/main.71de2751.chunk.css",
-    "static/js/main.289876ca.chunk.js"
+    "static/js/main.fa11b9a1.chunk.js"
   ]
 }
