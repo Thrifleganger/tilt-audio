@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tilt-audio/static/css/main.71de2751.chunk.css",
-    "main.js": "/tilt-audio/static/js/main.fa11b9a1.chunk.js",
-    "main.js.map": "/tilt-audio/static/js/main.fa11b9a1.chunk.js.map",
+    "main.js": "/tilt-audio/static/js/main.08a3987e.chunk.js",
+    "main.js.map": "/tilt-audio/static/js/main.08a3987e.chunk.js.map",
     "runtime-main.js": "/tilt-audio/static/js/runtime-main.23fe0355.js",
     "runtime-main.js.map": "/tilt-audio/static/js/runtime-main.23fe0355.js.map",
     "static/css/2.d98526b1.chunk.css": "/tilt-audio/static/css/2.d98526b1.chunk.css",
@@ -20,6 +20,7 @@
     "static/media/aliasing.c2e0555d.gif": "/tilt-audio/static/media/aliasing.c2e0555d.gif",
     "static/media/amplify.a06f9d98.jpg": "/tilt-audio/static/media/amplify.a06f9d98.jpg",
     "static/media/beatskillz-sequel.08a2afa2.jpg": "/tilt-audio/static/media/beatskillz-sequel.08a2afa2.jpg",
+    "static/media/bpb-dirty-la.e2dfa26a.jpg": "/tilt-audio/static/media/bpb-dirty-la.e2dfa26a.jpg",
     "static/media/intereference.bacd5780.gif": "/tilt-audio/static/media/intereference.bacd5780.gif",
     "static/media/julia-set-disassembled.69a9c265.gif": "/tilt-audio/static/media/julia-set-disassembled.69a9c265.gif",
     "static/media/julia-set.7b9c338b.gif": "/tilt-audio/static/media/julia-set.7b9c338b.gif",
@@ -41,6 +42,6 @@
     "static/css/2.d98526b1.chunk.css",
     "static/js/2.8893712c.chunk.js",
     "static/css/main.71de2751.chunk.css",
-    "static/js/main.fa11b9a1.chunk.js"
+    "static/js/main.08a3987e.chunk.js"
   ]
 }
