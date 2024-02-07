@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tilt-audio/static/css/main.71de2751.chunk.css",
-    "main.js": "/tilt-audio/static/js/main.08a3987e.chunk.js",
-    "main.js.map": "/tilt-audio/static/js/main.08a3987e.chunk.js.map",
+    "main.js": "/tilt-audio/static/js/main.7cd9f5f9.chunk.js",
+    "main.js.map": "/tilt-audio/static/js/main.7cd9f5f9.chunk.js.map",
     "runtime-main.js": "/tilt-audio/static/js/runtime-main.23fe0355.js",
     "runtime-main.js.map": "/tilt-audio/static/js/runtime-main.23fe0355.js.map",
     "static/css/2.d98526b1.chunk.css": "/tilt-audio/static/css/2.d98526b1.chunk.css",
@@ -31,6 +31,8 @@
     "static/media/phasor-introduction.feae4ef3.gif": "/tilt-audio/static/media/phasor-introduction.feae4ef3.gif",
     "static/media/phasor-variable-frequency.61a25319.gif": "/tilt-audio/static/media/phasor-variable-frequency.61a25319.gif",
     "static/media/plugins-that-knock.dd2d3b1d.jpg": "/tilt-audio/static/media/plugins-that-knock.dd2d3b1d.jpg",
+    "static/media/rosetta-compressor.84331f31.jpg": "/tilt-audio/static/media/rosetta-compressor.84331f31.jpg",
+    "static/media/rosetta-eq.bf6f4714.jpg": "/tilt-audio/static/media/rosetta-eq.bf6f4714.jpg",
     "static/media/sauceware-audio-scorch.914aab9a.jpg": "/tilt-audio/static/media/sauceware-audio-scorch.914aab9a.jpg",
     "static/media/sine-cosine.8c91af21.gif": "/tilt-audio/static/media/sine-cosine.8c91af21.gif",
     "static/media/sinusoid-properties.ed6c4092.gif": "/tilt-audio/static/media/sinusoid-properties.ed6c4092.gif",
@@ -42,6 +44,6 @@
     "static/css/2.d98526b1.chunk.css",
     "static/js/2.8893712c.chunk.js",
     "static/css/main.71de2751.chunk.css",
-    "static/js/main.08a3987e.chunk.js"
+    "static/js/main.7cd9f5f9.chunk.js"
   ]
 }
